@@ -37,7 +37,6 @@ function Footer() {
         width: "100%",
         position: "fixed",
         bottom: 0,
-        backgroundColor: "black",
       }}
     >
       <BottomNavigation
@@ -45,6 +44,7 @@ function Footer() {
           height: "10vh",
           display: "flex",
           justifyContent: "space-evenly",
+          backgroundColor: "secondary.main",
         }}
         showLabels
         value={route}
@@ -52,7 +52,13 @@ function Footer() {
           handleChange(newValue);
         }}
       >
-        <BottomNavigationAction label="Home" icon={<HomeIcon />} />
+        <BottomNavigationAction
+          label="Home"
+          sx={{
+            ":hover": "background-Color: blue",
+          }}
+          icon={<HomeIcon />}
+        />
         <BottomNavigationAction label="About" icon={<InfoIcon />} />
         <BottomNavigationAction
           label="Contact"
@@ -75,27 +81,19 @@ function Footer() {
           <Fade in={open}>
             <Box
               sx={{
-                position: "fixed",
+                position: "absolute",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
                 width: "80%",
+                top: "50%",
                 minHeight: "80vh",
-                bgcolor: "background.paper",
                 border: "2px solid #000",
                 boxShadow: 24,
+                backgroundColor: "primary.main",
                 p: 4,
               }}
             >
-              <Typography
-                id="transition-modal-title"
-                variant="h6"
-                component="h2"
-              >
-                Text in a modal
-              </Typography>
-              <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-                Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-              </Typography>
+              hi
             </Box>
           </Fade>
         </Modal>

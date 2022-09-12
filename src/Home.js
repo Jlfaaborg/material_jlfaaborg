@@ -5,9 +5,9 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import me from "./me.jpg";
 import resume from "./josh_faaborg_web_developer.pdf";
-import background from "./background.jpg";
+import background from "./backgroundVideo.mp4";
 import Slide from "@mui/material/Slide";
-import { TransitionProps } from "@mui/material/transitions";
+import Grow from "@mui/material/Grow";
 import Dialog from "@mui/material/Dialog";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
@@ -16,6 +16,9 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack5";
+import Grid from "@mui/material/Grid";
+import { styled } from "@mui/material/styles";
+import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -34,6 +37,10 @@ function Home() {
     setOpen(true);
   };
 
+  const handleChangePdf = () => {
+    pageNumber === 1 ? setPageNumber(2) : setPageNumber(1);
+  };
+
   const handleClose = () => {
     setOpen(false);
   };
@@ -49,14 +56,17 @@ function Home() {
         sx={{
           minHeight: "60vh",
           display: "flex",
-          backgroundImage: `url(${background})`,
           backgroundPosition: "center",
           color: "white",
+          backgroundColor: "secondary.main",
           alignItems: "center",
           justifyContent: "center",
         }}
         elevation={12}
       >
+        <video autoPlay loop muted style={{ position: "fixed", zIndex: -100 }}>
+          <source src={background} type="video/mp4" />
+        </video>
         <Box sx={{ flexBasis: "50%" }}>
           <Typography variant="h3" component="div" sx={{ flexGrow: 1 }}>
             Digital Marketer
@@ -71,9 +81,42 @@ function Home() {
           </Typography>
         </Box>
       </Paper>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Open full-screen dialog
-      </Button>
+      <Box
+        sx={{
+          height: "20vh",
+          padding: "2%",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Box sx={{}}>
+          <Grow in={true}>
+            {<KeyboardDoubleArrowUpIcon fontSize="large" color="primary" />}
+          </Grow>
+          <Grow
+            in={true}
+            style={{ transformOrigin: "0 0 0" }}
+            {...(true ? { timeout: 1000 } : {})}
+          >
+            {<KeyboardDoubleArrowUpIcon fontSize="large" color="primary" />}
+          </Grow>
+          <Grow
+            in={true}
+            style={{ transformOrigin: "0 0 0" }}
+            {...(true ? { timeout: 2000 } : {})}
+          >
+            {<KeyboardDoubleArrowUpIcon fontSize="large" color="primary" />}
+          </Grow>
+        </Box>
+        <Button
+          color="primary"
+          variant="contained"
+          size="large"
+          onClick={handleClickOpen}
+        >
+          Quick Overview
+        </Button>
+      </Box>
       <Dialog
         fullScreen
         open={open}
@@ -84,28 +127,53 @@ function Home() {
           <Toolbar>
             <IconButton
               edge="start"
-              color="inherit"
+              color="secondary"
               onClick={handleClose}
               aria-label="close"
             >
               <CloseIcon />
             </IconButton>
-            <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-              Hello
+            <Typography
+              color={"secondary"}
+              sx={{ ml: 2, flex: 1 }}
+              variant="h5"
+              component="div"
+            >
+              Quick Overview
             </Typography>
           </Toolbar>
         </AppBar>
-        <Box>
-          <Document
-            file={{ url: resume }}
-            onLoadSuccess={onDocumentLoadSuccess}
-          >
-            <Page pageNumber={pageNumber} />
-          </Document>
-          <p>
-            Page {pageNumber} of {numPages}
-          </p>
-        </Box>
+        <Grid container spacing={2}>
+          <Grid item xs={4}></Grid>
+          <Grid item xs={8} sx={{ textAlign: "center" }}>
+            <Box
+              sx={{
+                minWidth: "100%",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Document
+                file={{ url: resume }}
+                onLoadSuccess={onDocumentLoadSuccess}
+              >
+                <Page pageNumber={pageNumber} />
+              </Document>
+              <p>
+                Page {pageNumber} of {numPages}
+              </p>
+              <Button
+                color="primary"
+                variant="contained"
+                onClick={handleChangePdf}
+              >
+                More
+              </Button>
+            </Box>
+          </Grid>
+        </Grid>
       </Dialog>
     </Box>
   );
