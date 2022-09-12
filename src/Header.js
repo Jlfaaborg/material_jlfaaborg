@@ -11,14 +11,6 @@ function Header() {
     <Box sx={{ height: "10vh", padding: 0 }} color="primary">
       <AppBar sx={{}}>
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="secondary"
-            aria-label="menu"
-          >
-            <Menu />
-          </IconButton>
           <Typography variant="h5" component="div" sx={{ flexGrow: 1, color: "secondary.main" }}>
             Josh Faaborg | Web Developer
           </Typography>
