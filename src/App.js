@@ -7,7 +7,6 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import About from "./About";
 
-
 const theme = createTheme({
   palette: {
     primary: { main: "#607d8b" },

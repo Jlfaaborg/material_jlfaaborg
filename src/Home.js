@@ -4,6 +4,12 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import me from "./me.jpg";
+import googleAds from "./google_ads-official.svg";
+import googleAnalytics from "./google_analytics-ar21.svg";
+import html from "./html-5-logo-svgrepo-com.svg";
+import js from "./js-svgrepo-com.svg";
+import css from "./css-svgrepo-com.svg";
+import gtm from "./google-tag-manager.svg";
 import resume from "./josh_faaborg_web_developer.pdf";
 import background from "./backgroundVideo.mp4";
 import Slide from "@mui/material/Slide";
@@ -19,6 +25,11 @@ import { Document, Page } from "react-pdf/dist/esm/entry.webpack5";
 import Grid from "@mui/material/Grid";
 import { styled } from "@mui/material/styles";
 import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Icon from "@mui/material/Icon";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -58,7 +69,7 @@ function Home() {
           display: "flex",
           backgroundPosition: "center",
           color: "white",
-          backgroundColor: "secondary.main",
+          background: "linear-gradient(#607d8b, #f1dac4)",
           alignItems: "center",
           justifyContent: "center",
         }}
@@ -68,17 +79,83 @@ function Home() {
           <source src={background} type="video/mp4" />
         </video>
         <Box sx={{ flexBasis: "50%" }}>
-          <Typography variant="h3" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h3" component="div" color="primary" sx={{}}>
             Digital Marketer
           </Typography>
-          <Box component="div" sx={{}}>
-            hi
+          <Box
+            component="div"
+            sx={{
+              display: "flex",
+              flexGrow: 1,
+              fontSize: 80,
+              justifyContent: "space-evenly",
+              paddingTop: "5%",
+            }}
+          >
+            <Icon fontSize="inherit" sx={{ textAlign: "center" }}>
+              <img
+                style={{ height: "100%", width: "100%" }}
+                src={googleAds}
+                alt="google ads"
+              />
+            </Icon>
+            <Icon fontSize="inherit" sx={{ textAlign: "center" }}>
+              <img
+                style={{ height: "100%", width: "100%" }}
+                src={googleAnalytics}
+                alt="google analytics"
+              />
+            </Icon>
+            <Icon fontSize="inherit" sx={{ textAlign: "center" }}>
+              <img
+                style={{ height: "100%", width: "100%" }}
+                src={gtm}
+                alt="google tag manager"
+              />
+            </Icon>
           </Box>
         </Box>
         <Box sx={{ flexBasis: "50%" }}>
-          <Typography variant="h3" component="div" sx={{ flexGrow: 1 }}>
+          <Typography
+            variant="h3"
+            component="div"
+            color="secondary"
+            sx={{ flexGrow: 1 }}
+          >
             Turned Web Developer
           </Typography>
+          <Box
+            component="div"
+            sx={{
+              display: "flex",
+              flexGrow: 1,
+              fontSize: 80,
+              justifyContent: "space-evenly",
+              paddingTop: "5%",
+            }}
+          >
+            <Icon fontSize="inherit" sx={{ textAlign: "center" }}>
+              <img
+                style={{ height: "100%", width: "100%" }}
+                src={html}
+                alt="html"
+              />
+            </Icon>
+            <Icon fontSize="inherit" sx={{ textAlign: "center" }}>
+              <img
+                style={{ height: "100%", width: "100%" }}
+                src={css}
+                alt="css"
+              />
+            </Icon>
+            <Icon fontSize="inherit" sx={{ textAlign: "center" }}>
+              <img
+                style={{ height: "100%", width: "100%" }}
+                src={js}
+                alt="javascript"
+              />
+            </Icon>
+          </Box>
         </Box>
       </Paper>
       <Box
@@ -144,8 +221,74 @@ function Home() {
           </Toolbar>
         </AppBar>
         <Grid container spacing={2}>
-          <Grid item xs={4}></Grid>
-          <Grid item xs={8} sx={{ textAlign: "center" }}>
+          <Grid
+            item
+            xs={5}
+            sx={{
+              textAlign: "center",
+              paddingTop: "5%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Box
+              sx={{
+                minWidth: "100%",
+              }}
+            >
+              <Box
+                component="img"
+                sx={{
+                  height: "60vh",
+                }}
+                src={me}
+              />
+              <Accordion sx={{ textAlign: "center" }}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <Typography>Accordion 1</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Suspendisse malesuada lacus ex, sit amet blandit leo
+                    lobortis eget.
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel2a-content"
+                  id="panel2a-header"
+                >
+                  <Typography>Accordion 2</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Suspendisse malesuada lacus ex, sit amet blandit leo
+                    lobortis eget.
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel3a-content"
+                  id="panel3a-header"
+                >
+                  <Typography>Disabled Accordion</Typography>
+                </AccordionSummary>
+              </Accordion>
+            </Box>
+          </Grid>
+          <Grid item xs={7} sx={{ textAlign: "center" }}>
             <Box
               sx={{
                 minWidth: "100%",
