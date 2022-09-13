@@ -166,29 +166,33 @@ function Home() {
           justifyContent: "center",
         }}
       >
-        <Box sx={{}}>
-          <Grow in={true}>
-            {<KeyboardDoubleArrowUpIcon fontSize="large" color="primary" />}
-          </Grow>
-          <Grow
-            in={true}
-            style={{ transformOrigin: "0 0 0" }}
-            {...(true ? { timeout: 1000 } : {})}
-          >
-            {<KeyboardDoubleArrowUpIcon fontSize="large" color="primary" />}
-          </Grow>
+        <Box sx={{ fontSize: "50px" }}>
           <Grow
             in={true}
             style={{ transformOrigin: "0 0 0" }}
             {...(true ? { timeout: 2000 } : {})}
           >
-            {<KeyboardDoubleArrowUpIcon fontSize="large" color="primary" />}
+            {<KeyboardDoubleArrowUpIcon fontSize="inherit" color="primary" />}
+          </Grow>
+          <Grow
+            in={true}
+            style={{ transformOrigin: "0 0 0" }}
+            {...(true ? { timeout: 6000 } : {})}
+          >
+            {<KeyboardDoubleArrowUpIcon fontSize="inherit" color="primary" />}
+          </Grow>
+          <Grow
+            in={true}
+            style={{ transformOrigin: "0 0 0" }}
+            {...(true ? { timeout: 12000 } : {})}
+          >
+            {<KeyboardDoubleArrowUpIcon fontSize="inherit" color="primary" />}
           </Grow>
         </Box>
         <Button
           color="primary"
           variant="contained"
-          size="large"
+          sx={{ fontSize: "30px" }}
           onClick={handleClickOpen}
         >
           Quick Overview
@@ -199,6 +203,7 @@ function Home() {
         open={open}
         onClose={handleClose}
         TransitionComponent={Transition}
+        transitionDuration={1100}
       >
         <AppBar sx={{ position: "relative" }}>
           <Toolbar>
@@ -220,13 +225,21 @@ function Home() {
             </Typography>
           </Toolbar>
         </AppBar>
-        <Grid container spacing={2}>
+        <Grid
+          container
+          spacing={2}
+          paddingX={4}
+          sx={{
+            backgroundColor: "secondary.main",
+            height: "200vh",
+            minHeight: "fit-content",
+          }}
+        >
           <Grid
             item
-            xs={5}
+            xs={6}
             sx={{
               textAlign: "center",
-              paddingTop: "5%",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
@@ -245,54 +258,143 @@ function Home() {
                 }}
                 src={me}
               />
-              <Accordion sx={{ textAlign: "center" }}>
+              <Accordion sx={{ textAlign: "left" }}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  <Typography>Accordion 1</Typography>
+                  <Typography>Education & Training</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse malesuada lacus ex, sit amet blandit leo
-                    lobortis eget.
+                    2018 - Josh graduated with an A.S. studying Computer
+                    Science. During the time, Josh studied C# leading to .NET,
+                    where he grew to love web development
+                    <br />
+                    <br />
+                    2021 - Josh attended a bootcamp offered by Revature. During
+                    this time, Josh learned Salesforce development and software
+                    engineering topics ranging from: Git, Scrum/Agile, test
+                    driven development
                   </Typography>
                 </AccordionDetails>
               </Accordion>
-              <Accordion>
+              <Accordion sx={{ textAlign: "left" }}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel2a-content"
                   id="panel2a-header"
                 >
-                  <Typography>Accordion 2</Typography>
+                  <Typography>Digital Marketing</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse malesuada lacus ex, sit amet blandit leo
-                    lobortis eget.
+                    2019 - Josh graduated and looked for a web development job.
+                    What he found was a job as an SEO Specialist. Josh learned
+                    the basics of SEO to advanced technical SEO.
+                    <br />
+                    <br />
+                    2020 - Josh continued his digital marketing journey when he
+                    worked as a Project Manager. At that position, Josh was
+                    client facing, hands on in development and the digital
+                    marketing efforts.
+                    <br />
+                    <br />
+                    Present - Josh is currently a Google Ads and digital
+                    marketing expert holding multiple certificates from Google
+                    and Microsoft Advertising.
                   </Typography>
                 </AccordionDetails>
               </Accordion>
-              <Accordion>
+              <Accordion sx={{ textAlign: "left" }}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel3a-content"
                   id="panel3a-header"
                 >
-                  <Typography>Disabled Accordion</Typography>
+                  <Typography>Development Projects</Typography>
                 </AccordionSummary>
+                <AccordionDetails>
+                  <Typography sx={{}}>
+                    <a
+                      style={{ textDecoration: "none" }}
+                      href="https://jlfaaborg.com/wordpress"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      WordPress Site
+                    </a>{" "}
+                    - This is my WordPress portfolio
+                    <br />
+                    <br />
+                    <a
+                      style={{ textDecoration: "none" }}
+                      href="https://github.com/Jlfaaborg/material_jlfaaborg"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      This Site
+                    </a>{" "}
+                    - This site was coded using React and Material
+                    <br />
+                    <br />
+                    <a
+                      style={{ textDecoration: "none" }}
+                      href="https://www.clear2land.net/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Clear2Land
+                    </a>{" "}
+                    - This site is for a client. Created using WordPress
+                    <br />
+                    <br />
+                    <a
+                      style={{ textDecoration: "none" }}
+                      href="https://github.com/Jlfaaborg/google_ads_productivity_fullstack_ts"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Google Ads Productivity
+                    </a>{" "}
+                    - Used to bulk add conversions in Google Ads using Google
+                    Ads API
+                    <br />
+                    <br />
+                    <a
+                      style={{ textDecoration: "none" }}
+                      href="https://github.com/Jlfaaborg/Analytics"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Google Analytics Productivity
+                    </a>{" "}
+                    - Used to bulk add users to Google Analytics Accounts. Used
+                    Google Analytics API
+                    <br />
+                    <br />
+                    <a
+                      style={{ textDecoration: "none" }}
+                      href="https://github.com/Jlfaaborg/google-sheet-productivity"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Google Sheet Productivity
+                    </a>{" "}
+                    - Read data from one sheet, parsed, and organized data on
+                    another sheet. Used Google Sheets API
+                  </Typography>
+                </AccordionDetails>
               </Accordion>
             </Box>
           </Grid>
-          <Grid item xs={7} sx={{ textAlign: "center" }}>
+          <Grid item xs={6} sx={{ textAlign: "center" }}>
             <Box
               sx={{
                 minWidth: "100%",
                 display: "flex",
+                maxHeight: "80vh",
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
@@ -304,16 +406,39 @@ function Home() {
               >
                 <Page pageNumber={pageNumber} />
               </Document>
-              <p>
+              <p style={{ width: "100%" }}>
                 Page {pageNumber} of {numPages}
               </p>
-              <Button
-                color="primary"
-                variant="contained"
-                onClick={handleChangePdf}
+              <Box
+                sx={{
+                  display: "flex",
+                  width: "100%",
+                  justifyContent: "center",
+                  columnGap: "20px",
+                }}
               >
-                More
-              </Button>
+                <Button
+                  color="primary"
+                  variant="contained"
+                  onClick={handleChangePdf}
+                  sx={{ paddingX: "10%" }}
+                >
+                  More
+                </Button>
+                <Button
+                  color="primary"
+                  variant="contained"
+                  sx={{ paddingX: "10%" }}
+                >
+                  <a
+                    style={{ textDecoration: "none", color: "inherit" }}
+                    href={resume}
+                    download
+                  >
+                    Download
+                  </a>
+                </Button>
+              </Box>
             </Box>
           </Grid>
         </Grid>

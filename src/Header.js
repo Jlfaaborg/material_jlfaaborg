@@ -8,10 +8,14 @@ import { Email, GitHub, LinkedIn, Menu } from "@mui/icons-material";
 
 function Header() {
   return (
-    <Box sx={{ height: "10vh", padding: 0 }} color="primary">
-      <AppBar sx={{}}>
+    <Box height={"10vh"} sx={{ padding: 0 }} color="primary">
+      <AppBar sx={{ height: "inherit", justifyContent: "center" }}>
         <Toolbar>
-          <Typography variant="h5" component="div" sx={{ flexGrow: 1, color: "secondary.main" }}>
+          <Typography
+            variant="h5"
+            component="div"
+            sx={{ flexGrow: 1, color: "secondary.main" }}
+          >
             Josh Faaborg | Web Developer
           </Typography>
           <Box>
@@ -19,6 +23,8 @@ function Header() {
               size="large"
               href="https://www.linkedin.com/in/jlfaaborg"
               color="secondary"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <LinkedIn />
             </IconButton>
@@ -26,6 +32,8 @@ function Header() {
               size="large"
               href="https://github.com/Jlfaaborg"
               color="secondary"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <GitHub />
             </IconButton>
@@ -34,6 +42,8 @@ function Header() {
               variant="contained"
               href="mailto:jlfaaborg@gmail.com"
               color="secondary"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Email />
             </IconButton>
