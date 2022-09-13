@@ -8,13 +8,17 @@ import { Email, GitHub, LinkedIn, Menu } from "@mui/icons-material";
 
 function Header() {
   return (
-    <Box height={"10vh"} sx={{ padding: 0 }} color="primary">
-      <AppBar sx={{ height: "inherit", justifyContent: "center" }}>
-        <Toolbar>
+    <Box minHeight={"10vh"} sx={{ padding: 0 }} color="primary">
+      <AppBar sx={{ minHeight: "inherit", justifyContent: "center" }}>
+        <Toolbar sx={{ flexDirection: { xs: "column", md: "row" } }}>
           <Typography
             variant="h5"
             component="div"
-            sx={{ flexGrow: 1, color: "secondary.main" }}
+            sx={{
+              flexGrow: 1,
+              color: "secondary.main",
+              textAlign: { xs: "center", md: "left" },
+            }}
           >
             Josh Faaborg | Web Developer
           </Typography>

@@ -19,20 +19,26 @@ function About() {
         textAlign: "center",
         backgroundColor: "primary.main",
         marginTop: 0,
-        minHeight: "100vh",
+        minHeight: "fit-content",
         display: "flex",
         paddingX: "5%",
+        paddingBottom: 10,
       }}
     >
       <Fade timeout={2500} in={true}>
         <Timeline sx={{ paddingBottom: "10%" }} position="alternate">
           <TimelineItem>
-            <TimelineSeparator>
+            <TimelineSeparator sx={{ display: { xs: "none", sm: "inherit" } }}>
               <TimelineDot />
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
-              <Card sx={{ backgroundColor: "secondary.main" }}>
+              <Card
+                sx={{
+                  backgroundColor: "secondary.main",
+                  width: { xs: "65vw", sm: "inherit" },
+                }}
+              >
                 <CardContent>
                   <Typography
                     sx={{ fontSize: 14 }}
@@ -58,12 +64,17 @@ function About() {
             </TimelineContent>
           </TimelineItem>
           <TimelineItem>
-            <TimelineSeparator>
+            <TimelineSeparator sx={{ display: { xs: "none", sm: "inherit" } }}>
               <TimelineDot />
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
-              <Card sx={{ backgroundColor: "secondary.main" }}>
+              <Card
+                sx={{
+                  backgroundColor: "secondary.main",
+                  width: { xs: "65vw", sm: "inherit" },
+                }}
+              >
                 <CardContent>
                   <Typography
                     sx={{ fontSize: 14 }}
@@ -91,12 +102,17 @@ function About() {
             </TimelineContent>
           </TimelineItem>
           <TimelineItem>
-            <TimelineSeparator>
+            <TimelineSeparator sx={{ display: { xs: "none", sm: "inherit" } }}>
               <TimelineDot />
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
-              <Card sx={{ backgroundColor: "secondary.main" }}>
+              <Card
+                sx={{
+                  backgroundColor: "secondary.main",
+                  width: { xs: "65vw", sm: "inherit" },
+                }}
+              >
                 <CardContent>
                   <Typography
                     sx={{ fontSize: 14 }}
@@ -129,12 +145,17 @@ function About() {
             </TimelineContent>
           </TimelineItem>
           <TimelineItem>
-            <TimelineSeparator>
+            <TimelineSeparator sx={{ display: { xs: "none", sm: "inherit" } }}>
               <TimelineDot />
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
-              <Card sx={{ backgroundColor: "secondary.main" }}>
+              <Card
+                sx={{
+                  backgroundColor: "secondary.main",
+                  width: { xs: "65vw", sm: "inherit" },
+                }}
+              >
                 <CardContent>
                   <Typography
                     sx={{ fontSize: 14 }}
@@ -166,12 +187,17 @@ function About() {
             </TimelineContent>
           </TimelineItem>
           <TimelineItem>
-            <TimelineSeparator>
+            <TimelineSeparator sx={{ display: { xs: "none", sm: "inherit" } }}>
               <TimelineDot />
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
-              <Card sx={{ backgroundColor: "secondary.main" }}>
+              <Card
+                sx={{
+                  backgroundColor: "secondary.main",
+                  width: { xs: "65vw", sm: "inherit" },
+                }}
+              >
                 <CardContent>
                   <Typography
                     sx={{ fontSize: 14 }}
@@ -201,12 +227,17 @@ function About() {
             </TimelineContent>
           </TimelineItem>
           <TimelineItem>
-            <TimelineSeparator>
+            <TimelineSeparator sx={{ display: { xs: "none", sm: "inherit" } }}>
               <TimelineDot />
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
-              <Card sx={{ backgroundColor: "secondary.main" }}>
+              <Card
+                sx={{
+                  backgroundColor: "secondary.main",
+                  width: { xs: "65vw", sm: "inherit" },
+                }}
+              >
                 <CardContent>
                   <Typography
                     sx={{ fontSize: 14 }}

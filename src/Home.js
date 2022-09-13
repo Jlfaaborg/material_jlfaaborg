@@ -30,6 +30,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Icon from "@mui/material/Icon";
+import { Scale } from "@mui/icons-material";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -69,13 +70,24 @@ function Home() {
           display: "flex",
           backgroundPosition: "center",
           color: "white",
-          background: "linear-gradient(#607d8b, #f1dac4)",
+          background: "linear-gradient(to bottom right, #607d8b, #f1dac4)",
           alignItems: "center",
           justifyContent: "center",
+          flexDirection: { xs: "column", md: "row" },
         }}
         elevation={12}
       >
-        <video autoPlay loop muted style={{ position: "fixed", zIndex: -100 }}>
+        <video
+          autoPlay
+          loop
+          muted
+          style={{
+            position: "fixed",
+            zIndex: -100,
+            minHeight: "100vh",
+            minWidth: "100vw",
+          }}
+        >
           <source src={background} type="video/mp4" />
         </video>
         <Box sx={{ flexBasis: "50%" }}>
@@ -115,7 +127,7 @@ function Home() {
             </Icon>
           </Box>
         </Box>
-        <Box sx={{ flexBasis: "50%" }}>
+        <Box sx={{ flexBasis: "50%", paddingTop: { xs: 5, md: 0 } }}>
           <Typography
             variant="h3"
             component="div"
@@ -237,7 +249,8 @@ function Home() {
         >
           <Grid
             item
-            xs={6}
+            xs={12}
+            lg={6}
             sx={{
               textAlign: "center",
               display: "flex",
@@ -254,7 +267,7 @@ function Home() {
               <Box
                 component="img"
                 sx={{
-                  height: "60vh",
+                  height: { xs: "30vh", md: "60vh" },
                 }}
                 src={me}
               />
@@ -389,26 +402,36 @@ function Home() {
               </Accordion>
             </Box>
           </Grid>
-          <Grid item xs={6} sx={{ textAlign: "center" }}>
+          <Grid item xs={12} lg={6} sx={{ textAlign: "center" }}>
             <Box
               sx={{
                 minWidth: "100%",
-                display: "flex",
                 maxHeight: "80vh",
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
+                paddingTop: 5,
+                display: "flex",
               }}
             >
-              <Document
-                file={{ url: resume }}
-                onLoadSuccess={onDocumentLoadSuccess}
+              <Box
+                sx={{
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexDirection: "column",
+                  display: { xs: "none", sm: "inherit" },
+                }}
               >
-                <Page pageNumber={pageNumber} />
-              </Document>
-              <p style={{ width: "100%" }}>
-                Page {pageNumber} of {numPages}
-              </p>
+                <Document
+                  file={{ url: resume }}
+                  onLoadSuccess={onDocumentLoadSuccess}
+                >
+                  <Page pageNumber={pageNumber} height="700" />
+                </Document>
+                <p style={{ width: "100%" }}>
+                  Page {pageNumber} of {numPages}
+                </p>
+              </Box>
               <Box
                 sx={{
                   display: "flex",
@@ -421,7 +444,10 @@ function Home() {
                   color="primary"
                   variant="contained"
                   onClick={handleChangePdf}
-                  sx={{ paddingX: "10%" }}
+                  sx={{
+                    paddingX: "10%",
+                    display: { xs: "none", md: "inherit" },
+                  }}
                 >
                   More
                 </Button>
@@ -435,7 +461,7 @@ function Home() {
                     href={resume}
                     download
                   >
-                    Download
+                    Download Resume
                   </a>
                 </Button>
               </Box>

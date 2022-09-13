@@ -96,6 +96,7 @@ function Footer() {
                 backgroundColor: "primary.main",
                 p: 4,
                 display: "flex",
+                flexDirection: { xs: "column", md: "row" },
                 justifyContent: "center",
                 alignItems: "center",
                 fontSize: 50,
