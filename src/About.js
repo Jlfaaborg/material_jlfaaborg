@@ -1,15 +1,15 @@
 import React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Timeline from "@mui/lab/Timeline";
-import TimelineItem from "@mui/lab/TimelineItem";
-import TimelineSeparator from "@mui/lab/TimelineSeparator";
-import TimelineConnector from "@mui/lab/TimelineConnector";
-import TimelineContent from "@mui/lab/TimelineContent";
-import TimelineDot from "@mui/lab/TimelineDot";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/system/Box";
-import Fade from "@mui/material/Fade";
+
+import { Box, Typography, Card, CardContent, Fade } from "@mui/material";
+
+import {
+  TimelineDot,
+  TimelineContent,
+  TimelineConnector,
+  TimelineSeparator,
+  TimelineItem,
+  Timeline,
+} from "@mui/lab";
 
 function About() {
   return (

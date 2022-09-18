@@ -1,36 +1,35 @@
-import React from "react";
-import { useState } from "react";
-import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
-import me from "./me.jpg";
-import googleAds from "./google_ads-official.svg";
-import googleAnalytics from "./google_analytics-ar21.svg";
-import html from "./html-5-logo-svgrepo-com.svg";
-import js from "./js-svgrepo-com.svg";
-import css from "./css-svgrepo-com.svg";
-import gtm from "./google-tag-manager.svg";
-import resume from "./josh_faaborg_web_developer.pdf";
-import background from "./backgroundVideo.mp4";
-import Slide from "@mui/material/Slide";
-import Grow from "@mui/material/Grow";
-import Dialog from "@mui/material/Dialog";
-import Button from "@mui/material/Button";
-import Divider from "@mui/material/Divider";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import CloseIcon from "@mui/icons-material/Close";
+import React, { useState } from "react";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack5";
-import Grid from "@mui/material/Grid";
-import { styled } from "@mui/material/styles";
-import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import Icon from "@mui/material/Icon";
-import { Scale } from "@mui/icons-material";
+
+import me from "./content/me.jpg";
+import googleAds from "./content/google_ads-official.svg";
+import googleAnalytics from "./content/google_analytics-ar21.svg";
+import html from "./content/html-5-logo-svgrepo-com.svg";
+import js from "./content/js-svgrepo-com.svg";
+import css from "./content/css-svgrepo-com.svg";
+import gtm from "./content/google-tag-manager.svg";
+import resume from "./content/josh_faaborg_web_developer.pdf";
+import background from "./content/backgroundVideo.mp4";
+
+import {
+  Box,
+  Typography,
+  Paper,
+  IconButton,
+  AppBar,
+  Toolbar,
+  Button,
+  Dialog,
+  Grow,
+  Slide,
+  AccordionDetails,
+  AccordionSummary,
+  Accordion,
+  Grid,
+  Icon,
+} from "@mui/material";
+
+import { ExpandMore, KeyboardDoubleArrowUp, Close } from "@mui/icons-material";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -38,12 +37,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 function Home() {
   const [open, setOpen] = useState(false);
-  const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
-
-  const onDocumentLoadSuccess = ({ numPages }) => {
-    setNumPages(numPages);
-  };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -62,11 +56,13 @@ function Home() {
       sx={{
         flexGrow: 1,
         textAlign: "center",
+        paddingY: 7,
+        paddingX: 3,
       }}
     >
       <Paper
         sx={{
-          minHeight: "60vh",
+          minHeight: "50vh",
           display: "flex",
           backgroundPosition: "center",
           color: "white",
@@ -184,21 +180,21 @@ function Home() {
             style={{ transformOrigin: "0 0 0" }}
             {...(true ? { timeout: 2000 } : {})}
           >
-            {<KeyboardDoubleArrowUpIcon fontSize="inherit" color="primary" />}
+            {<KeyboardDoubleArrowUp fontSize="inherit" color="primary" />}
           </Grow>
           <Grow
             in={true}
             style={{ transformOrigin: "0 0 0" }}
             {...(true ? { timeout: 6000 } : {})}
           >
-            {<KeyboardDoubleArrowUpIcon fontSize="inherit" color="primary" />}
+            {<KeyboardDoubleArrowUp fontSize="inherit" color="primary" />}
           </Grow>
           <Grow
             in={true}
             style={{ transformOrigin: "0 0 0" }}
             {...(true ? { timeout: 12000 } : {})}
           >
-            {<KeyboardDoubleArrowUpIcon fontSize="inherit" color="primary" />}
+            {<KeyboardDoubleArrowUp fontSize="inherit" color="primary" />}
           </Grow>
         </Box>
         <Button
@@ -215,7 +211,10 @@ function Home() {
         open={open}
         onClose={handleClose}
         TransitionComponent={Transition}
-        transitionDuration={1100}
+        transitionDuration={900}
+        sx={{
+          backgroundColor: "secondary.main",
+        }}
       >
         <AppBar sx={{ position: "relative" }}>
           <Toolbar>
@@ -225,7 +224,7 @@ function Home() {
               onClick={handleClose}
               aria-label="close"
             >
-              <CloseIcon />
+              <Close />
             </IconButton>
             <Typography
               color={"secondary"}
@@ -239,12 +238,11 @@ function Home() {
         </AppBar>
         <Grid
           container
-          spacing={2}
-          paddingX={4}
+          padding={4}
           sx={{
             backgroundColor: "secondary.main",
-            height: "200vh",
             minHeight: "fit-content",
+            height: "fit-content",
           }}
         >
           <Grid
@@ -253,30 +251,19 @@ function Home() {
             lg={6}
             sx={{
               textAlign: "center",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
             }}
           >
-            <Box
-              sx={{
-                minWidth: "100%",
-              }}
-            >
+            <Box sx={{}}>
               <Box
                 component="img"
                 sx={{
-                  height: { xs: "30vh", md: "60vh" },
+                  height: { xs: "30vh", md: "70vh" },
+                  paddingBottom: 2,
                 }}
                 src={me}
               />
               <Accordion sx={{ textAlign: "left" }}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                >
+                <AccordionSummary expandIcon={<ExpandMore />}>
                   <Typography>Education & Training</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
@@ -294,11 +281,7 @@ function Home() {
                 </AccordionDetails>
               </Accordion>
               <Accordion sx={{ textAlign: "left" }}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel2a-content"
-                  id="panel2a-header"
-                >
+                <AccordionSummary expandIcon={<ExpandMore />}>
                   <Typography>Digital Marketing</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
@@ -321,11 +304,7 @@ function Home() {
                 </AccordionDetails>
               </Accordion>
               <Accordion sx={{ textAlign: "left" }}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel3a-content"
-                  id="panel3a-header"
-                >
+                <AccordionSummary expandIcon={<ExpandMore />}>
                   <Typography>Development Projects</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
@@ -405,56 +384,35 @@ function Home() {
           <Grid item xs={12} lg={6} sx={{ textAlign: "center" }}>
             <Box
               sx={{
-                minWidth: "100%",
-                maxHeight: "80vh",
-                flexDirection: "column",
-                alignItems: "center",
                 justifyContent: "center",
-                paddingTop: 5,
-                display: "flex",
               }}
             >
               <Box
                 sx={{
-                  alignItems: "center",
-                  justifyContent: "center",
-                  flexDirection: "column",
-                  display: { xs: "none", sm: "inherit" },
-                }}
-              >
-                <Document
-                  file={{ url: resume }}
-                  onLoadSuccess={onDocumentLoadSuccess}
-                >
-                  <Page pageNumber={pageNumber} height="700" />
-                </Document>
-                <p style={{ width: "100%" }}>
-                  Page {pageNumber} of {numPages}
-                </p>
-              </Box>
-              <Box
-                sx={{
                   display: "flex",
                   width: "100%",
-                  justifyContent: "center",
-                  columnGap: "20px",
+                  justifyContent: "space-evenly",
+                  paddingBottom: 2,
                 }}
               >
                 <Button
                   color="primary"
-                  variant="contained"
+                  variant="outlined"
                   onClick={handleChangePdf}
                   sx={{
-                    paddingX: "10%",
                     display: { xs: "none", md: "inherit" },
+                    flexBasis: "40%",
                   }}
                 >
                   More
                 </Button>
                 <Button
                   color="primary"
-                  variant="contained"
-                  sx={{ paddingX: "10%" }}
+                  variant="outlined"
+                  sx={{
+                    display: { xs: "none", md: "inherit" },
+                    flexBasis: "40%",
+                  }}
                 >
                   <a
                     style={{ textDecoration: "none", color: "inherit" }}
@@ -465,6 +423,9 @@ function Home() {
                   </a>
                 </Button>
               </Box>
+              <Document file={{ url: resume }}>
+                <Page pageNumber={pageNumber} />
+              </Document>
             </Box>
           </Grid>
         </Grid>

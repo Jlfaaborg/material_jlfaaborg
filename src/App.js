@@ -1,11 +1,13 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+
 import Header from "./Header";
 import Home from "./Home";
 import Footer from "./Footer";
+import About from "./About";
+
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import About from "./About";
 
 const theme = createTheme({
   palette: {
