@@ -66,21 +66,21 @@ function Faq() {
         sx={{
           backgroundColor: "primary.main",
           minHeight: "80vh",
-          textAlign: "center",
+          flexGrow: 1,
         }}
       >
-        <Box sx={{ padding: 5 }}>
+        <Box sx={{ paddingX: 5 }}>
           <Typography
             color={"secondary"}
-            sx={{ paddingY: 3 }}
+            sx={{ paddingY: 3, textAlign: "center" }}
             variant="h3"
             component="div"
           >
             FAQ
           </Typography>
-          <Masonry columns={2} spacing={5}>
+          <Masonry columns={{ xs: 1, md: 2 }} spacing={{ xs: 2, md: 6 }}>
             {content.map((content, index) => (
-              <Paper key={index}>
+              <Paper key={index} sx={{ texAlign: "left" }}>
                 <StyledAccordion sx={{ minHeight: "fit-content" }}>
                   <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                     <Typography>Question: {content.question}</Typography>

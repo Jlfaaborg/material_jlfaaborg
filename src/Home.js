@@ -88,8 +88,13 @@ function Home() {
           >
             <source src={background} type="video/mp4" />
           </video>
-          <Box sx={{ flexBasis: "50%" }}>
-            <Typography variant="h3" component="div" color="primary" sx={{}}>
+          <Box sx={{ flexBasis: "50%", paddingBottom: { xs: 3, md: 0 } }}>
+            <Typography
+              variant="h3"
+              component="div"
+              color="primary"
+              sx={{ fontSize: { xs: "1.5em", md: "4em" } }}
+            >
               Digital Marketer
             </Typography>
             <Box
@@ -97,9 +102,9 @@ function Home() {
               sx={{
                 display: "flex",
                 flexGrow: 1,
-                fontSize: 80,
+                fontSize: { xs: "55px", md: "80px" },
                 justifyContent: "space-evenly",
-                paddingTop: "5%",
+                paddingTop: { xs: "4%", md: "5%" },
               }}
             >
               <Icon fontSize="inherit" sx={{ textAlign: "center" }}>
@@ -125,12 +130,12 @@ function Home() {
               </Icon>
             </Box>
           </Box>
-          <Box sx={{ flexBasis: "50%", paddingTop: { xs: 5, md: 0 } }}>
+          <Box sx={{ flexBasis: "50%" }}>
             <Typography
               variant="h3"
               component="div"
               color="secondary"
-              sx={{ flexGrow: 1 }}
+              sx={{ flexGrow: 1, fontSize: { xs: "1.5em", md: "4em" } }}
             >
               Turned Web Developer
             </Typography>
@@ -139,9 +144,9 @@ function Home() {
               sx={{
                 display: "flex",
                 flexGrow: 1,
-                fontSize: 80,
+                fontSize: { xs: "55px", md: "80px" },
                 justifyContent: "space-evenly",
-                paddingTop: "5%",
+                paddingTop: { xs: "4%", md: "5%" },
               }}
             >
               <Icon fontSize="inherit" sx={{ textAlign: "center" }}>
@@ -247,7 +252,7 @@ function Home() {
             sx={{
               backgroundColor: "secondary.main",
               minHeight: "fit-content",
-              height: "fit-content",
+              height: "100vh",
             }}
           >
             <Grid
@@ -414,8 +419,7 @@ function Home() {
                   <Button
                     variant="contained"
                     sx={{
-                      display: { xs: "none", md: "inherit" },
-                      flexBasis: "40%",
+                      flexBasis: { xs: "100%", md: "40%" },
                       backgroundColor: "primary.main",
                       color: "secondary.main",
                     }}
@@ -429,9 +433,11 @@ function Home() {
                     </a>
                   </Button>
                 </Box>
-                <Document file={{ url: resume }}>
-                  <Page pageNumber={pageNumber} />
-                </Document>
+                <Box sx={{ display: { xs: "none", md: "inherit" } }}>
+                  <Document file={{ url: resume }}>
+                    <Page pageNumber={pageNumber} />
+                  </Document>
+                </Box>
               </Box>
             </Grid>
           </Grid>

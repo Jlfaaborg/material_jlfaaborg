@@ -78,7 +78,7 @@ function Header() {
                   </ListItem>
                   <ListItem onClick={() => setOpenDrawer(false)}>
                     <ListItemText>
-                      <Links component={L} to="/about">
+                      <Links component={L} to="/faq">
                         Faq
                       </Links>
                     </ListItemText>
