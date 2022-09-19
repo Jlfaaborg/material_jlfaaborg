@@ -6,6 +6,7 @@ import Home from "./Home";
 import Footer from "./Footer";
 import About from "./About";
 import Contact from "./Contact";
+import Faq from "./Faq";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -26,6 +27,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/faq" element={<Faq />} />
         </Routes>
         <Footer />
       </ThemeProvider>

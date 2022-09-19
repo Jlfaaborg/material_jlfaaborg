@@ -13,19 +13,19 @@ import {
 
 function About() {
   return (
-    <Box
-      sx={{
-        flexGrow: 1,
-        textAlign: "center",
-        backgroundColor: "primary.main",
-        marginTop: 0,
-        minHeight: "fit-content",
-        display: "flex",
-        paddingX: "5%",
-        paddingBottom: 10,
-      }}
-    >
-      <Fade timeout={2500} in={true}>
+    <Fade timeout={2500} in={true}>
+      <Box
+        sx={{
+          flexGrow: 1,
+          textAlign: "center",
+          backgroundColor: "primary.main",
+          marginTop: 0,
+          minHeight: "fit-content",
+          display: "flex",
+          paddingX: "5%",
+          paddingBottom: 10,
+        }}
+      >
         <Timeline sx={{ paddingBottom: "10%" }} position="alternate">
           <Typography
             variant="h3"
@@ -275,8 +275,8 @@ function About() {
             </TimelineContent>
           </TimelineItem>
         </Timeline>
-      </Fade>
-    </Box>
+      </Box>
+    </Fade>
   );
 }
 

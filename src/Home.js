@@ -26,6 +26,7 @@ import {
   AccordionSummary,
   Accordion,
   Grid,
+  Fade,
   Icon,
 } from "@mui/material";
 
@@ -52,384 +53,391 @@ function Home() {
   };
 
   return (
-    <Box
-      sx={{
-        flexGrow: 1,
-        textAlign: "center",
-        paddingY: 7,
-        paddingX: 3,
-      }}
-    >
-      <Paper
-        sx={{
-          minHeight: "50vh",
-          display: "flex",
-          backgroundPosition: "center",
-          color: "white",
-          background: "linear-gradient(to bottom right, #607d8b, #f1dac4)",
-          alignItems: "center",
-          justifyContent: "center",
-          flexDirection: { xs: "column", md: "row" },
-        }}
-        elevation={12}
-      >
-        <video
-          autoPlay
-          loop
-          muted
-          style={{
-            position: "fixed",
-            zIndex: -100,
-            minHeight: "100vh",
-            minWidth: "100vw",
-          }}
-        >
-          <source src={background} type="video/mp4" />
-        </video>
-        <Box sx={{ flexBasis: "50%" }}>
-          <Typography variant="h3" component="div" color="primary" sx={{}}>
-            Digital Marketer
-          </Typography>
-          <Box
-            component="div"
-            sx={{
-              display: "flex",
-              flexGrow: 1,
-              fontSize: 80,
-              justifyContent: "space-evenly",
-              paddingTop: "5%",
-            }}
-          >
-            <Icon fontSize="inherit" sx={{ textAlign: "center" }}>
-              <img
-                style={{ height: "100%", width: "100%" }}
-                src={googleAds}
-                alt="google ads"
-              />
-            </Icon>
-            <Icon fontSize="inherit" sx={{ textAlign: "center" }}>
-              <img
-                style={{ height: "100%", width: "100%" }}
-                src={googleAnalytics}
-                alt="google analytics"
-              />
-            </Icon>
-            <Icon fontSize="inherit" sx={{ textAlign: "center" }}>
-              <img
-                style={{ height: "100%", width: "100%" }}
-                src={gtm}
-                alt="google tag manager"
-              />
-            </Icon>
-          </Box>
-        </Box>
-        <Box sx={{ flexBasis: "50%", paddingTop: { xs: 5, md: 0 } }}>
-          <Typography
-            variant="h3"
-            component="div"
-            color="secondary"
-            sx={{ flexGrow: 1 }}
-          >
-            Turned Web Developer
-          </Typography>
-          <Box
-            component="div"
-            sx={{
-              display: "flex",
-              flexGrow: 1,
-              fontSize: 80,
-              justifyContent: "space-evenly",
-              paddingTop: "5%",
-            }}
-          >
-            <Icon fontSize="inherit" sx={{ textAlign: "center" }}>
-              <img
-                style={{ height: "100%", width: "100%" }}
-                src={html}
-                alt="html"
-              />
-            </Icon>
-            <Icon fontSize="inherit" sx={{ textAlign: "center" }}>
-              <img
-                style={{ height: "100%", width: "100%" }}
-                src={css}
-                alt="css"
-              />
-            </Icon>
-            <Icon fontSize="inherit" sx={{ textAlign: "center" }}>
-              <img
-                style={{ height: "100%", width: "100%" }}
-                src={js}
-                alt="javascript"
-              />
-            </Icon>
-          </Box>
-        </Box>
-      </Paper>
+    <Fade timeout={2500} in={true}>
       <Box
         sx={{
-          height: "20vh",
-          padding: "2%",
-          alignItems: "center",
-          justifyContent: "center",
+          flexGrow: 1,
+          textAlign: "center",
+          paddingY: 7,
+          paddingX: 3,
         }}
       >
-        <Box sx={{ fontSize: "50px" }}>
-          <Grow
-            in={true}
-            style={{ transformOrigin: "0 0 0" }}
-            {...(true ? { timeout: 2000 } : {})}
-          >
-            {<KeyboardDoubleArrowUp fontSize="inherit" color="primary" />}
-          </Grow>
-          <Grow
-            in={true}
-            style={{ transformOrigin: "0 0 0" }}
-            {...(true ? { timeout: 6000 } : {})}
-          >
-            {<KeyboardDoubleArrowUp fontSize="inherit" color="primary" />}
-          </Grow>
-          <Grow
-            in={true}
-            style={{ transformOrigin: "0 0 0" }}
-            {...(true ? { timeout: 12000 } : {})}
-          >
-            {<KeyboardDoubleArrowUp fontSize="inherit" color="primary" />}
-          </Grow>
-        </Box>
-        <Button
-          color="primary"
-          variant="contained"
-          sx={{ fontSize: "30px" }}
-          onClick={handleClickOpen}
-        >
-          Quick Overview
-        </Button>
-      </Box>
-      <Dialog
-        fullScreen
-        open={open}
-        onClose={handleClose}
-        TransitionComponent={Transition}
-        transitionDuration={900}
-        sx={{
-          backgroundColor: "secondary.main",
-        }}
-      >
-        <AppBar sx={{ position: "relative" }}>
-          <Toolbar>
-            <IconButton
-              edge="start"
-              color="secondary"
-              onClick={handleClose}
-              aria-label="close"
-            >
-              <Close />
-            </IconButton>
-            <Typography
-              color={"secondary"}
-              sx={{ ml: 2, flex: 1 }}
-              variant="h5"
-              component="div"
-            >
-              Quick Overview
-            </Typography>
-          </Toolbar>
-        </AppBar>
-        <Grid
-          container
-          padding={4}
+        <Paper
           sx={{
-            backgroundColor: "secondary.main",
-            minHeight: "fit-content",
-            height: "fit-content",
+            minHeight: "50vh",
+            display: "flex",
+            backgroundPosition: "center",
+            color: "white",
+            background: "linear-gradient(to bottom right, #607d8b, #f1dac4)",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: { xs: "column", md: "row" },
           }}
+          elevation={12}
         >
-          <Grid
-            item
-            xs={12}
-            lg={6}
-            sx={{
-              textAlign: "center",
+          <video
+            autoPlay
+            loop
+            muted
+            style={{
+              position: "fixed",
+              zIndex: -100,
+              minHeight: "100vh",
+              minWidth: "100vw",
             }}
           >
-            <Box sx={{}}>
-              <Box
-                component="img"
-                sx={{
-                  height: { xs: "30vh", md: "70vh" },
-                  paddingBottom: 2,
-                }}
-                src={me}
-              />
-              <Accordion sx={{ textAlign: "left" }}>
-                <AccordionSummary expandIcon={<ExpandMore />}>
-                  <Typography>Education & Training</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    2018 - Josh graduated with an A.S. studying Computer
-                    Science. During the time, Josh studied C# leading to .NET,
-                    where he grew to love web development
-                    <br />
-                    <br />
-                    2021 - Josh attended a bootcamp offered by Revature. During
-                    this time, Josh learned Salesforce development and software
-                    engineering topics ranging from: Git, Scrum/Agile, test
-                    driven development
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion sx={{ textAlign: "left" }}>
-                <AccordionSummary expandIcon={<ExpandMore />}>
-                  <Typography>Digital Marketing</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    2019 - Josh found a job as an SEO Specialist. Josh learned
-                    the basics of SEO to advanced technical SEO.
-                    <br />
-                    <br />
-                    2020 - Josh continued his digital marketing journey when he
-                    worked as a Project Manager. At that position, Josh was
-                    client facing, hands on in development and the digital
-                    marketing efforts.
-                    <br />
-                    <br />
-                    Present - Josh is currently a Google Ads and digital
-                    marketing expert holding multiple certificates from Google
-                    and Microsoft Advertising.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion sx={{ textAlign: "left" }}>
-                <AccordionSummary expandIcon={<ExpandMore />}>
-                  <Typography>Development Projects</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography sx={{}}>
-                    <a
-                      style={{ textDecoration: "none" }}
-                      href="https://jlfaaborg.com/wordpress"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      WordPress Site
-                    </a>{" "}
-                    - This is my WordPress portfolio
-                    <br />
-                    <br />
-                    <a
-                      style={{ textDecoration: "none" }}
-                      href="https://github.com/Jlfaaborg/material_jlfaaborg"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      This Site
-                    </a>{" "}
-                    - This site was coded using React and Material
-                    <br />
-                    <br />
-                    <a
-                      style={{ textDecoration: "none" }}
-                      href="https://www.clear2land.net/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Clear2Land
-                    </a>{" "}
-                    - This site is for a client. Created using WordPress
-                    <br />
-                    <br />
-                    <a
-                      style={{ textDecoration: "none" }}
-                      href="https://github.com/Jlfaaborg/google_ads_productivity_fullstack_ts"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Google Ads Productivity
-                    </a>{" "}
-                    - Used to bulk add conversions in Google Ads using Google
-                    Ads API
-                    <br />
-                    <br />
-                    <a
-                      style={{ textDecoration: "none" }}
-                      href="https://github.com/Jlfaaborg/Analytics"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Google Analytics Productivity
-                    </a>{" "}
-                    - Used to bulk add users to Google Analytics Accounts. Used
-                    Google Analytics API
-                    <br />
-                    <br />
-                    <a
-                      style={{ textDecoration: "none" }}
-                      href="https://github.com/Jlfaaborg/google-sheet-productivity"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Google Sheet Productivity
-                    </a>{" "}
-                    - Read data from one sheet, parsed, and organized data on
-                    another sheet. Used Google Sheets API
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-            </Box>
-          </Grid>
-          <Grid item xs={12} lg={6} sx={{ textAlign: "center" }}>
+            <source src={background} type="video/mp4" />
+          </video>
+          <Box sx={{ flexBasis: "50%" }}>
+            <Typography variant="h3" component="div" color="primary" sx={{}}>
+              Digital Marketer
+            </Typography>
             <Box
+              component="div"
               sx={{
-                justifyContent: "center",
+                display: "flex",
+                flexGrow: 1,
+                fontSize: 80,
+                justifyContent: "space-evenly",
+                paddingTop: "5%",
               }}
             >
+              <Icon fontSize="inherit" sx={{ textAlign: "center" }}>
+                <img
+                  style={{ height: "100%", width: "100%" }}
+                  src={googleAds}
+                  alt="google ads"
+                />
+              </Icon>
+              <Icon fontSize="inherit" sx={{ textAlign: "center" }}>
+                <img
+                  style={{ height: "100%", width: "100%" }}
+                  src={googleAnalytics}
+                  alt="google analytics"
+                />
+              </Icon>
+              <Icon fontSize="inherit" sx={{ textAlign: "center" }}>
+                <img
+                  style={{ height: "100%", width: "100%" }}
+                  src={gtm}
+                  alt="google tag manager"
+                />
+              </Icon>
+            </Box>
+          </Box>
+          <Box sx={{ flexBasis: "50%", paddingTop: { xs: 5, md: 0 } }}>
+            <Typography
+              variant="h3"
+              component="div"
+              color="secondary"
+              sx={{ flexGrow: 1 }}
+            >
+              Turned Web Developer
+            </Typography>
+            <Box
+              component="div"
+              sx={{
+                display: "flex",
+                flexGrow: 1,
+                fontSize: 80,
+                justifyContent: "space-evenly",
+                paddingTop: "5%",
+              }}
+            >
+              <Icon fontSize="inherit" sx={{ textAlign: "center" }}>
+                <img
+                  style={{ height: "100%", width: "100%" }}
+                  src={html}
+                  alt="html"
+                />
+              </Icon>
+              <Icon fontSize="inherit" sx={{ textAlign: "center" }}>
+                <img
+                  style={{ height: "100%", width: "100%" }}
+                  src={css}
+                  alt="css"
+                />
+              </Icon>
+              <Icon fontSize="inherit" sx={{ textAlign: "center" }}>
+                <img
+                  style={{ height: "100%", width: "100%" }}
+                  src={js}
+                  alt="javascript"
+                />
+              </Icon>
+            </Box>
+          </Box>
+        </Paper>
+        <Box
+          sx={{
+            height: "20vh",
+            padding: "2%",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Box sx={{ fontSize: "50px" }}>
+            <Grow
+              in={true}
+              style={{ transformOrigin: "0 0 0" }}
+              {...(true ? { timeout: 2000 } : {})}
+            >
+              {<KeyboardDoubleArrowUp fontSize="inherit" color="primary" />}
+            </Grow>
+            <Grow
+              in={true}
+              style={{ transformOrigin: "0 0 0" }}
+              {...(true ? { timeout: 6000 } : {})}
+            >
+              {<KeyboardDoubleArrowUp fontSize="inherit" color="primary" />}
+            </Grow>
+            <Grow
+              in={true}
+              style={{ transformOrigin: "0 0 0" }}
+              {...(true ? { timeout: 12000 } : {})}
+            >
+              {<KeyboardDoubleArrowUp fontSize="inherit" color="primary" />}
+            </Grow>
+          </Box>
+          <Button
+            variant="contained"
+            sx={{
+              fontSize: "25px",
+              backgroundColor: "primary.main",
+              color: "secondary.main",
+            }}
+            onClick={handleClickOpen}
+          >
+            Quick Overview
+          </Button>
+        </Box>
+        <Dialog
+          fullScreen
+          open={open}
+          onClose={handleClose}
+          TransitionComponent={Transition}
+          transitionDuration={900}
+          sx={{
+            backgroundColor: "secondary.main",
+          }}
+        >
+          <AppBar sx={{ position: "relative" }}>
+            <Toolbar>
+              <IconButton
+                edge="start"
+                color="secondary"
+                onClick={handleClose}
+                aria-label="close"
+              >
+                <Close />
+              </IconButton>
+              <Typography
+                color={"secondary"}
+                sx={{ ml: 2, flex: 1 }}
+                variant="h5"
+                component="div"
+              >
+                Quick Overview
+              </Typography>
+            </Toolbar>
+          </AppBar>
+          <Grid
+            container
+            padding={4}
+            sx={{
+              backgroundColor: "secondary.main",
+              minHeight: "fit-content",
+              height: "fit-content",
+            }}
+          >
+            <Grid
+              item
+              xs={12}
+              lg={6}
+              sx={{
+                textAlign: "center",
+              }}
+            >
+              <Box sx={{}}>
+                <Box
+                  component="img"
+                  sx={{
+                    height: { xs: "30vh", md: "70vh" },
+                    paddingBottom: 2,
+                  }}
+                  src={me}
+                />
+                <Accordion sx={{ textAlign: "left" }}>
+                  <AccordionSummary expandIcon={<ExpandMore />}>
+                    <Typography>Education & Training</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography>
+                      2018 - Josh graduated with an A.S. studying Computer
+                      Science. During the time, Josh studied C# leading to .NET,
+                      where he grew to love web development
+                      <br />
+                      <br />
+                      2021 - Josh attended a bootcamp offered by Revature.
+                      During this time, Josh learned Salesforce development and
+                      software engineering topics ranging from: Git,
+                      Scrum/Agile, test driven development
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>
+                <Accordion sx={{ textAlign: "left" }}>
+                  <AccordionSummary expandIcon={<ExpandMore />}>
+                    <Typography>Digital Marketing</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography>
+                      2019 - Josh found a job as an SEO Specialist. Josh learned
+                      the basics of SEO to advanced technical SEO.
+                      <br />
+                      <br />
+                      2020 - Josh continued his digital marketing journey when
+                      he worked as a Project Manager. At that position, Josh was
+                      client facing, hands on in development and the digital
+                      marketing efforts.
+                      <br />
+                      <br />
+                      Present - Josh is currently a Google Ads and digital
+                      marketing expert holding multiple certificates from Google
+                      and Microsoft Advertising.
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>
+                <Accordion sx={{ textAlign: "left" }}>
+                  <AccordionSummary expandIcon={<ExpandMore />}>
+                    <Typography>Development Projects</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography sx={{}}>
+                      <a
+                        style={{ textDecoration: "none" }}
+                        href="https://jlfaaborg.com/wordpress"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        WordPress Site
+                      </a>{" "}
+                      - This is my WordPress portfolio
+                      <br />
+                      <br />
+                      <a
+                        style={{ textDecoration: "none" }}
+                        href="https://github.com/Jlfaaborg/material_jlfaaborg"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        This Site
+                      </a>{" "}
+                      - This site was coded using React and Material
+                      <br />
+                      <br />
+                      <a
+                        style={{ textDecoration: "none" }}
+                        href="https://www.clear2land.net/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Clear2Land
+                      </a>{" "}
+                      - This site is for a client. Created using WordPress
+                      <br />
+                      <br />
+                      <a
+                        style={{ textDecoration: "none" }}
+                        href="https://github.com/Jlfaaborg/google_ads_productivity_fullstack_ts"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Google Ads Productivity
+                      </a>{" "}
+                      - Used to bulk add conversions in Google Ads using Google
+                      Ads API
+                      <br />
+                      <br />
+                      <a
+                        style={{ textDecoration: "none" }}
+                        href="https://github.com/Jlfaaborg/Analytics"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Google Analytics Productivity
+                      </a>{" "}
+                      - Used to bulk add users to Google Analytics Accounts.
+                      Used Google Analytics API
+                      <br />
+                      <br />
+                      <a
+                        style={{ textDecoration: "none" }}
+                        href="https://github.com/Jlfaaborg/google-sheet-productivity"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Google Sheet Productivity
+                      </a>{" "}
+                      - Read data from one sheet, parsed, and organized data on
+                      another sheet. Used Google Sheets API
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>
+              </Box>
+            </Grid>
+            <Grid item xs={12} lg={6} sx={{ textAlign: "center" }}>
               <Box
                 sx={{
-                  display: "flex",
-                  width: "100%",
-                  justifyContent: "space-evenly",
-                  paddingBottom: 2,
+                  justifyContent: "center",
                 }}
               >
-                <Button
-                  color="primary"
-                  variant="outlined"
-                  onClick={handleChangePdf}
+                <Box
                   sx={{
-                    display: { xs: "none", md: "inherit" },
-                    flexBasis: "40%",
+                    display: "flex",
+                    width: "100%",
+                    justifyContent: "space-evenly",
+                    paddingBottom: 2,
                   }}
                 >
-                  Next Page
-                </Button>
-                <Button
-                  color="primary"
-                  variant="outlined"
-                  sx={{
-                    display: { xs: "none", md: "inherit" },
-                    flexBasis: "40%",
-                  }}
-                >
-                  <a
-                    style={{ textDecoration: "none", color: "inherit" }}
-                    href={resume}
-                    download
+                  <Button
+                    variant="contained"
+                    onClick={handleChangePdf}
+                    sx={{
+                      display: { xs: "none", md: "inherit" },
+                      flexBasis: "40%",
+                      backgroundColor: "primary.main",
+                      color: "secondary.main",
+                    }}
                   >
-                    Download Resume
-                  </a>
-                </Button>
+                    Next Page
+                  </Button>
+                  <Button
+                    variant="contained"
+                    sx={{
+                      display: { xs: "none", md: "inherit" },
+                      flexBasis: "40%",
+                      backgroundColor: "primary.main",
+                      color: "secondary.main",
+                    }}
+                  >
+                    <a
+                      style={{ textDecoration: "none", color: "inherit" }}
+                      href={resume}
+                      download
+                    >
+                      Download Resume
+                    </a>
+                  </Button>
+                </Box>
+                <Document file={{ url: resume }}>
+                  <Page pageNumber={pageNumber} />
+                </Document>
               </Box>
-              <Document file={{ url: resume }}>
-                <Page pageNumber={pageNumber} />
-              </Document>
-            </Box>
+            </Grid>
           </Grid>
-        </Grid>
-      </Dialog>
-    </Box>
+        </Dialog>
+      </Box>
+    </Fade>
   );
 }
 

@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-import { Box, Typography, Button, TextField } from "@mui/material";
-
-import { ExpandMore, KeyboardDoubleArrowUp, Close } from "@mui/icons-material";
+import { Box, Typography, Button, TextField, Fade } from "@mui/material";
 
 function Contact() {
   const [allValues, setAllValues] = useState({
@@ -39,76 +37,78 @@ function Contact() {
   };
 
   return (
-    <Box
-      sx={{
-        backgroundColor: "secondary.main",
-        minHeight: "80vh",
-        flexGrow: 1,
-        textAlign: "center",
-        display: "flex",
-        justifyContent: "start",
-        alignItems: "center",
-        flexDirection: "column",
-      }}
-    >
-      <Typography
-        color={"primary"}
-        sx={{ paddingY: 3 }}
-        variant="h3"
-        component="div"
-      >
-        Contact
-      </Typography>
+    <Fade timeout={2500} in={true}>
       <Box
         sx={{
           backgroundColor: "primary.main",
+          minHeight: "80vh",
           flexGrow: 1,
-          paddingBottom: 20,
+          textAlign: "center",
+          display: "flex",
+          justifyContent: "start",
+          alignItems: "center",
+          flexDirection: "column",
         }}
       >
-        <form>
-          <TextField
-            label="First Name"
-            id="fname"
-            fullWidth
-            autoComplete="none"
-            onChange={handleChange}
-          />
-          <TextField
-            label="Last Name"
-            id="lname"
-            fullWidth
-            autoComplete="none"
-            onChange={handleChange}
-          />
-          <TextField
-            label="Email"
-            id="lname"
-            fullWidth
-            autoComplete="none"
-            onChange={handleChange}
-          />
-          <TextField
-            label="Message"
-            id="message"
-            fullWidth
-            multiline
-            rows={5}
-            autoComplete="none"
-            onChange={handleChange}
-          />
-          <Button
-            color="primary"
-            size="large"
-            variant="contained"
-            type="submit"
-            onClick={handleSubmit}
-          >
-            Submit
-          </Button>
-        </form>
+        <Typography
+          color={"secondary"}
+          sx={{ paddingY: 3 }}
+          variant="h3"
+          component="div"
+        >
+          Contact
+        </Typography>
+        <Box
+          sx={{
+            backgroundColor: "secondary.main",
+            flexGrow: 1,
+            paddingBottom: 20,
+          }}
+        >
+          <form>
+            <TextField
+              label="First Name"
+              id="fname"
+              fullWidth
+              autoComplete="none"
+              onChange={handleChange}
+            />
+            <TextField
+              label="Last Name"
+              id="lname"
+              fullWidth
+              autoComplete="none"
+              onChange={handleChange}
+            />
+            <TextField
+              label="Email"
+              id="lname"
+              fullWidth
+              autoComplete="none"
+              onChange={handleChange}
+            />
+            <TextField
+              label="Message"
+              id="message"
+              fullWidth
+              multiline
+              rows={5}
+              autoComplete="none"
+              onChange={handleChange}
+            />
+            <Button
+              color="primary"
+              size="large"
+              variant="contained"
+              type="submit"
+              onClick={handleSubmit}
+            >
+              Submit
+            </Button>
+          </form>
+        </Box>
       </Box>
-    </Box>
+    </Fade>
   );
 }
 
