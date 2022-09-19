@@ -286,8 +286,7 @@ function Home() {
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
-                    2019 - Josh graduated and looked for a web development job.
-                    What he found was a job as an SEO Specialist. Josh learned
+                    2019 - Josh found a job as an SEO Specialist. Josh learned
                     the basics of SEO to advanced technical SEO.
                     <br />
                     <br />
@@ -404,7 +403,7 @@ function Home() {
                     flexBasis: "40%",
                   }}
                 >
-                  More
+                  Next Page
                 </Button>
                 <Button
                   color="primary"

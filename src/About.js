@@ -27,6 +27,14 @@ function About() {
     >
       <Fade timeout={2500} in={true}>
         <Timeline sx={{ paddingBottom: "10%" }} position="alternate">
+          <Typography
+            variant="h3"
+            component="div"
+            color="primary"
+            sx={{ color: "secondary.main", paddingBottom: 4 }}
+          >
+            Career Timeline
+          </Typography>
           <TimelineItem>
             <TimelineSeparator sx={{ display: { xs: "none", sm: "inherit" } }}>
               <TimelineDot />
