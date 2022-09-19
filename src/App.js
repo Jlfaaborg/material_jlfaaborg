@@ -1,11 +1,15 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+
 import Header from "./Header";
 import Home from "./Home";
 import Footer from "./Footer";
+import About from "./About";
+import Contact from "./Contact";
+import Faq from "./Faq";
+
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import About from "./About";
 
 const theme = createTheme({
   palette: {
@@ -22,6 +26,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/faq" element={<Faq />} />
         </Routes>
         <Footer />
       </ThemeProvider>

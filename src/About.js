@@ -1,32 +1,40 @@
 import React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Timeline from "@mui/lab/Timeline";
-import TimelineItem from "@mui/lab/TimelineItem";
-import TimelineSeparator from "@mui/lab/TimelineSeparator";
-import TimelineConnector from "@mui/lab/TimelineConnector";
-import TimelineContent from "@mui/lab/TimelineContent";
-import TimelineDot from "@mui/lab/TimelineDot";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/system/Box";
-import Fade from "@mui/material/Fade";
+
+import { Box, Typography, Card, CardContent, Fade } from "@mui/material";
+
+import {
+  TimelineDot,
+  TimelineContent,
+  TimelineConnector,
+  TimelineSeparator,
+  TimelineItem,
+  Timeline,
+} from "@mui/lab";
 
 function About() {
   return (
-    <Box
-      sx={{
-        flexGrow: 1,
-        textAlign: "center",
-        backgroundColor: "primary.main",
-        marginTop: 0,
-        minHeight: "fit-content",
-        display: "flex",
-        paddingX: "5%",
-        paddingBottom: 10,
-      }}
-    >
-      <Fade timeout={2500} in={true}>
+    <Fade timeout={2500} in={true}>
+      <Box
+        sx={{
+          flexGrow: 1,
+          textAlign: "center",
+          backgroundColor: "primary.main",
+          marginTop: 0,
+          minHeight: "fit-content",
+          display: "flex",
+          paddingX: "5%",
+          paddingBottom: 10,
+        }}
+      >
         <Timeline sx={{ paddingBottom: "10%" }} position="alternate">
+          <Typography
+            variant="h3"
+            component="div"
+            color="primary"
+            sx={{ color: "secondary.main", paddingBottom: 4 }}
+          >
+            Career Timeline
+          </Typography>
           <TimelineItem>
             <TimelineSeparator sx={{ display: { xs: "none", sm: "inherit" } }}>
               <TimelineDot />
@@ -267,8 +275,8 @@ function About() {
             </TimelineContent>
           </TimelineItem>
         </Timeline>
-      </Fade>
-    </Box>
+      </Box>
+    </Fade>
   );
 }
 
